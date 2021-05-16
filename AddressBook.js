@@ -209,6 +209,20 @@ let findingContactUsingStateOrCity = contactsArray.filter((contactBook) => conta
                                     || contactBook.city.includes("Secunderabad"));
 console.log("\nFound contacts Across State or City are: " + findingContactUsingStateOrCity.toString() +"\n");
 
+//UC10 count of person by city and state
+let countByStateOrCity = 0;
+function checkCount(contactBook){
+    if(contactBook.state == "Telangana"){
+        return countByStateOrCity++;
+    }else
+        return countByStateOrCity;
+}
+contactsArray = contactsArray.forEach((contactBook) => checkCount(contactBook));
+if(countByStateOrCity > 0){
+    console.log("Number of person based on City or state: " +countByStateOrCity);
+}else{
+    console.log("No contact found");
+}
 } catch (e) 
 {
   console.log(e);
