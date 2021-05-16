@@ -172,6 +172,10 @@ contactsArray.forEach((contactBook) => console.log(contactBook.toString()));
 contactsArray.splice(findPerson,1);
 console.log("----------------------Contacts after Being Deleted from the Addressbook---------------------------------");
 contactsArray.forEach((contactBook) => console.log(contactBook.toString()));
+
+//UC6 number of contacts in Address Book
+console.log("Number of Contacts Present in Address Book --> "+ contactsArray.length);
+
 }catch(e){
     console.log(e);
 }
