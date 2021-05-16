@@ -156,6 +156,17 @@ contactsArray.push(
 
 contactsArray.forEach((contactBook) =>
     console.log(contactBook.toString()));
+
+//finding index using name
+let findPerson = contactsArray.findIndex(
+    (contactBook) => contactBook.firstName == "Sai");
+
+//updating the contact detail
+contactsArray[findPerson].lastName = "Venkata"
+
+//display contacts after being updated
+console.log("<-------------After changing the last name the updated contact---------------->");
+contactsArray.forEach((contactBook) => console.log(contactBook.toString()));
 }catch(e){
-    console.log("Please check your details again" + e);
+    console.log(e);
 }
