@@ -199,6 +199,10 @@ if (countDuplicate > 0)
   console.log( "--It is a Duplicate Entry--" );
 else
   console.log( "--It is not a  Duplicate Entry--" );
+
+//UC8 find person using state
+let findingContactUsingState = contactsArray.filter((contactBook) => contactBook.state.includes("Telangana"));
+console.log("Found contacts are: " + findingContactUsingState.toString());
 } catch (e) 
 {
   console.log(e);
