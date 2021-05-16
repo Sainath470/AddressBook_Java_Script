@@ -167,6 +167,11 @@ contactsArray[findPerson].lastName = "Venkata"
 //display contacts after being updated
 console.log("<-------------After changing the last name the updated contact---------------->");
 contactsArray.forEach((contactBook) => console.log(contactBook.toString()));
+
+//UC5 Removing an element from an array at particular index
+contactsArray.splice(findPerson,1);
+console.log("----------------------Contacts after Being Deleted from the Addressbook---------------------------------");
+contactsArray.forEach((contactBook) => console.log(contactBook.toString()));
 }catch(e){
     console.log(e);
 }
