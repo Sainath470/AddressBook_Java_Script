@@ -183,6 +183,23 @@ function findTotalContacts(contactsArray)
 contactsArray.reduce(findTotalContacts, 1);
 console.log("Number of Contacts Present in Address Book --> "+ contactsPresentTotal);
 
-}catch(e){
-    console.log(e);
+//UC7 Check Duplicate Person details
+let countDuplicate = 0;
+function checkDuplicatesCount(contactBook) 
+{
+  if (contactBook.firstName == "Ven"){
+     return countDuplicate++;
+  }else
+     return countDuplicate;
+}
+
+//using foreach checking the count for each contact
+contactsArray.forEach((contactBook) => checkDuplicatesCount(contactBook));
+if (countDuplicate > 0)
+  console.log( "--It is a Duplicate Entry--" );
+else
+  console.log( "--It is not a  Duplicate Entry--" );
+} catch (e) 
+{
+  console.log(e);
 }
