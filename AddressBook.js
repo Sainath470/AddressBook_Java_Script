@@ -174,7 +174,14 @@ console.log("----------------------Contacts after Being Deleted from the Address
 contactsArray.forEach((contactBook) => console.log(contactBook.toString()));
 
 //UC6 number of contacts in Address Book
-console.log("Number of Contacts Present in Address Book --> "+ contactsArray.length);
+var contactsPresentTotal = 0;
+function findTotalContacts(contactsArray) 
+{
+  if (contactsArray != null) contactsPresentTotal++;
+  return contactsPresentTotal;
+}
+contactsArray.reduce(findTotalContacts, 1);
+console.log("Number of Contacts Present in Address Book --> "+ contactsPresentTotal);
 
 }catch(e){
     console.log(e);
