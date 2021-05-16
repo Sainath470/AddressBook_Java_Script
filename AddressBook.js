@@ -130,14 +130,14 @@ set email(email)
     //defining to string method
     toString() 
     {
-        return  "firstName='" + this.firstName + '\'' +
-                ", lastName='" + this.lastName + '\'' +
-                ", address='" + this.address + '\'' +
-                ", city='" + this.city + '\'' +
-                ", state='" + this.state + '\'' +
-                ", zipCode='" + this.zip + '\'' +
-                ", email='" + this.email + '\'' +
-                ", phoneNumber='" + this.phoneNumber;
+        return  "\nfirstName='" + this.firstName + '\'' +
+                ", \nlastName='" + this.lastName + '\'' +
+                ", \naddress='" + this.address + '\'' +
+                ", \ncity='" + this.city + '\'' +
+                ", \nstate='" + this.state + '\'' +
+                ", \nzipCode='" + this.zip + '\'' +
+                ", \nemail='" + this.email + '\'' +
+                ", \nphoneNumber='" + this.phoneNumber;
     }
   }
 
@@ -165,12 +165,12 @@ let findPerson = contactsArray.findIndex(
 contactsArray[findPerson].lastName = "Venkata"
 
 //display contacts after being updated
-console.log("<-------------After changing the last name the updated contact---------------->");
+console.log("\n<-------------After changing the last name the updated contact---------------->");
 contactsArray.forEach((contactBook) => console.log(contactBook.toString()));
 
 //UC5 Removing an element from an array at particular index
 contactsArray.splice(findPerson,1);
-console.log("----------------------Contacts after Being Deleted from the Addressbook---------------------------------");
+console.log("\n----------------------Contacts after Being Deleted from the Addressbook---------------------------------");
 contactsArray.forEach((contactBook) => console.log(contactBook.toString()));
 
 //UC6 number of contacts in Address Book
@@ -181,7 +181,7 @@ function findTotalContacts(contactsArray)
   return contactsPresentTotal;
 }
 contactsArray.reduce(findTotalContacts, 1);
-console.log("Number of Contacts Present in Address Book --> "+ contactsPresentTotal);
+console.log("\nNumber of Contacts Present in Address Book --> "+ contactsPresentTotal);
 
 //UC7 Check Duplicate Person details
 let countDuplicate = 0;
@@ -196,13 +196,19 @@ function checkDuplicatesCount(contactBook)
 //using foreach checking the count for each contact
 contactsArray.forEach((contactBook) => checkDuplicatesCount(contactBook));
 if (countDuplicate > 0)
-  console.log( "--It is a Duplicate Entry--" );
+  console.log( "\n--It is a Duplicate Entry--" );
 else
-  console.log( "--It is not a  Duplicate Entry--" );
+  console.log( "\n--It is not a  Duplicate Entry--" );
 
 //UC8 find person using state
 let findingContactUsingState = contactsArray.filter((contactBook) => contactBook.state.includes("Telangana"));
-console.log("Found contacts are: " + findingContactUsingState.toString());
+console.log("\nFound contacts across State are: " + findingContactUsingState.toString());
+
+//UC9 Search persons by city or state
+let findingContactUsingStateOrCity = contactsArray.filter((contactBook) => contactBook.state.includes("Telangana")
+                                    || contactBook.city.includes("Secunderabad"));
+console.log("\nFound contacts Across State or City are: " + findingContactUsingStateOrCity.toString() +"\n");
+
 } catch (e) 
 {
   console.log(e);
