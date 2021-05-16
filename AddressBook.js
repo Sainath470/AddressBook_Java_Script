@@ -142,6 +142,20 @@ set email(email)
   }
 
   //Creating an instance and giving contact details
-  let contactBook = new AddressBook("Sai", "Nath", "AsRaonagar", "Hyderabad", "Telangana", "500040",
-    "91 9191919192", "Sai@gmail.com");
-    console.log(contactBook.toString());
+try{
+let contactsArray = new Array();
+contactsArray.push(
+    new AddressBook("Sai", "Nath", "AsRaonagar", "Hyderabad", "Telangana", "500040",
+    "91 9191919191", "sai@gmail.com")
+);
+
+contactsArray.push(
+    new AddressBook("Ven", "Kata", "ShramilNagar", "Hyderabad", "Telangana", "500040",
+"91 0091919191", "When@gmail.com")
+);
+
+contactsArray.forEach((contactBook) =>
+    console.log(contactBook.toString()));
+}catch(e){
+    console.log("Please check your details again" + e);
+}
